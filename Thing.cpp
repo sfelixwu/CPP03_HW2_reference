@@ -47,3 +47,28 @@ void Thing::dump
   return;
 }
 
+Json::Value
+Thing::dump2JSON
+()
+{
+  Json::Value result;
+  if (this->model != "")
+    {
+      result["model"] = this->model;
+    }
+
+  if (this->sequence_num != "")
+    {
+      result["sequence number"] = this->sequence_num;
+    }
+
+  if (this->description != "")
+    {
+      result["description"] = this->description;
+    }
+  
+#ifdef _ECS36B_DEBUG_
+  std::cout << result.toStyledString() << std::endl;
+#endif /* _ECS36B_DEBUG_ */
+  return result;
+}

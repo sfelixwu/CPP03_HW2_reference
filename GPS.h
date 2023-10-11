@@ -10,17 +10,20 @@
 #include <cstdlib>
 
 #include "ecs36b_Common.h"
-
 using namespace std;
 
 class GPS_DD
 {
  private:
+ protected:
   double latitude;
   double longitude;
+  std::string location_label;
  public:
-  explicit GPS_DD();
-  explicit GPS_DD(double, double);
+  GPS_DD();
+  GPS_DD(double, double);
+  GPS_DD(double, double, std::string);
+  void setLocationLabel(std::string);
   double getLatitude();
   double getLongitude();
   double distance(GPS_DD);

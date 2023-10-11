@@ -7,6 +7,10 @@
 #include "GPS.h"
 #include "JvTime.h"
 
+#include "ecs36b_Common.h"
+
+using namespace std;
+
 class Person
 {
  private:
@@ -29,6 +33,7 @@ public:
   GPS_DD getLocation();
   JvTime getLocationTime();
   void dump();
+  Json::Value dump2JSON();
 };
 
 #endif  /* _PERSON_H_ */

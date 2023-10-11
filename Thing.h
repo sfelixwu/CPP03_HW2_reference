@@ -7,6 +7,9 @@
 #include "GPS.h"
 #include "JvTime.h"
 
+#include "ecs36b_Common.h"
+using namespace std;
+
 class Thing
 {
  private:
@@ -24,7 +27,8 @@ class Thing
   
   Thing(void);
   Thing(Person arg_owner);
-  virtual void dump(); // print the content of the object
+  void dump(); // print the content of the object
+  Json::Value dump2JSON();
 };
 
 #endif /* _THING_H_ */

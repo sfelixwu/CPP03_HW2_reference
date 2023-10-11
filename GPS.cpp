@@ -5,14 +5,25 @@ GPS_DD::GPS_DD()
 {
   this->latitude = 0.0;
   this->longitude = 0.0;
+  this->location_label = "default";
 }
 
 GPS_DD::GPS_DD(double arg_latitude, double arg_longitude)
 {
-  float latitude = 0.3;
+  // float latitude = 0.3;
   // latitude = arg_latitude;       // option 1
   this->latitude = arg_latitude;    // option 2
   this->longitude = arg_longitude;
+  this->location_label = "default";
+}
+
+GPS_DD::GPS_DD(double arg_latitude, double arg_longitude, std::string arg_label)
+{
+  // float latitude = 0.3;
+  // latitude = arg_latitude;       // option 1
+  this->latitude = arg_latitude;    // option 2
+  this->longitude = arg_longitude;
+  this->location_label = arg_label;
 }
 
 double 
@@ -134,6 +145,11 @@ GPS_DD::dump2JSON
       result["longitude"] = this->longitude;
     }
 
+  if (this->location_label != "")
+    {
+      result["location label"] = this->location_label;
+    }
+    
 #ifdef _ECS36B_DEBUG_
   std::cout << result.toStyledString() << std::endl;
 #endif /* _ECS36B_DEBUG_ */

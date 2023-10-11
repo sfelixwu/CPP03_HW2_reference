@@ -73,3 +73,25 @@ void Person::dump
   return;
 }
 
+Json::Value
+Person::dump2JSON
+()
+{
+  Json::Value result;
+  if (this->name != "")
+    {
+      result["name"] = this->name;
+    }
+
+  if (this->SSN != "")
+    {
+      result["SSN"] = this->SSN;
+    }
+
+  result["home"] = (this->home).dump2JSON();
+  
+#ifdef _ECS36B_DEBUG_
+  std::cout << result.toStyledString() << std::endl;
+#endif /* _ECS36B_DEBUG_ */
+  return result;
+}
