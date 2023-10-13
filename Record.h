@@ -11,9 +11,29 @@
 
 #include "ecs36b_Common.h"
 
+// instructional objective for HW2 --
+
+// (1) std::vector
 // std::vector is part of the Standard Template Library in C++
 // reference -- https://cplusplus.com/reference/vector/vector/
 // std::vector<[type of the elements]> [vector variable name];
+
+// (2) design a bunch of classes for a "story/description"
+// NL => Objects
+// trade-offs in Object-Oriented Design
+
+// (3) separate compilation or why Record.h and Record.cpp?
+// and, how will Makefile/make help to realize that?
+
+// (4) the basic idea of JSON (Javascript Object Notation)
+// a linearized representation of object(s)
+
+// (4.5) why do we need the "dump" functionality in OOP?
+
+// (5) installation of library such as JSONCPP
+// and, how to set -I and -L flags to find those files?
+// useful tool to find the successfully installed files --
+// $ sudo find / -name json -print
 
 class Record
 {
