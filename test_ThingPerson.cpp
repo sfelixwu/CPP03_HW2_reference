@@ -10,12 +10,13 @@ main(int argc, char *argv[])
 {
   // if (argc != 3) return -1;
 
-  GPS_DD gps_Home_Woodland { 38.672215864622636, -121.72280111121437 };
-  GPS_DD gps_TLC_UCDavis   { 38.53874868013882,  -121.7542091083306 };
+  GPS_DD gps_Home_Woodland { 38.672215864622636, -121.72280111121437, "Costco, Woodland" };
+  GPS_DD gps_TLC_UCDavis   { 38.53874868013882,  -121.7542091083306, "Teaching and Learning Complex" };
+  GPS_DD gps_IKEA_Sacramento { 38.58681641563053, -121.55296296578501, "IKEA, West Sacramento" };
 
   Person Felix { "987654321", "Felix", gps_Home_Woodland };
+  Person John { "987654322", "John", gps_IKEA_Sacramento };
 
-  GPS_DD gps_IKEA_Sacramento { 38.58681641563053, -121.55296296578501};
 
   Thing Swedish_Meatball { Felix };
   Swedish_Meatball.model = "HUVUDROLL";
@@ -44,7 +45,6 @@ main(int argc, char *argv[])
   JvTime event_jv { "2023-10-04T16:00:00+0000" };
 
   Record hw2_r1;
-  hw2_r1.addWho(Felix);
 
   Thing Android_Felix { Felix };
   Android_Felix.model = "Pixel 4";
@@ -58,10 +58,13 @@ main(int argc, char *argv[])
   JLab_Felix.description = "Black";
   JLab_Felix.location = gps_TLC_UCDavis;
 
+  hw2_r1.addWho(Felix);
+  hw2_r1.addWho(John);
   hw2_r1.addWhat(Android_Felix);
   hw2_r1.addWhat(JLab_Felix);
   hw2_r1.setWhere(gps_TLC_UCDavis);
-  r1.setWhen(event_jv);
+  hw2_r1.setWhen(event_jv);
+  
   x = hw2_r1.dump2JSON();
   std::cout << x.toStyledString() << std::endl;
 

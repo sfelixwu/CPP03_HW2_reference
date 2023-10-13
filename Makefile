@@ -5,7 +5,7 @@
 # example: $ ./test_GPS 48.88 2.3
 
 CC 	= g++ -std=c++14
-CFLAGS 	= -g
+CFLAGS 	= -g -I/opt/homebrew/include
 LDFLAGS = -L/opt/homebrew/lib -ljsoncpp -lmicrohttpd -ljsonrpccpp-common -ljsonrpccpp-server -lcurl -ljsonrpccpp-client
 
 # rules.

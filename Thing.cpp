@@ -66,6 +66,8 @@ Thing::dump2JSON
     {
       result["description"] = this->description;
     }
+
+  result["owner"] = (this->owner).dump2JSON();
   
 #ifdef _ECS36B_DEBUG_
   std::cout << result.toStyledString() << std::endl;
